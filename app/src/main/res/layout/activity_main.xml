@@ -1,0 +1,132 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc" tools:context=".mainActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="50sp" android:gravity="center" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="center_horizontal|bottom">
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/itemPrice"
+            android:layout_gravity="center_horizontal|top"
+            android:background="#ff2df8ff"
+            android:layout_marginTop="60dp"
+            android:editable="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate Change"
+            android:id="@+id/button"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:onClick="onButtonClick" />
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:background="@color/black_overlay" android:orientation="horizontal"
+            tools:ignore="UselessParent"
+            android:weightSum="1">
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/errorView"
+            android:layout_gravity="center_horizontal|top"
+            android:height="100dp"
+            android:layout_marginTop="100dp"
+            android:autoText="true"
+            android:width="300dp"
+            android:textColor="#ffff1729" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Please enter the price in cents using an integer."
+            android:id="@+id/instructions"
+            android:layout_gravity="left|top"
+            android:background="#ff290dff" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/quarters"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="60dp"
+            android:width="100dp"
+            android:minWidth="100dp"
+            android:background="#ff2dcbff"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/nickels"
+            android:width="25dp"
+            android:layout_weight="0.26"
+            android:background="#ff2dcbff"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="60dp" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/dimes"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="60dp"
+            android:width="50dp"
+            android:background="#ff2dcbff"
+            android:layout_weight="0.14"
+            android:minWidth="150dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Quarters"
+            android:id="@+id/quarterView"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Dimes"
+            android:id="@+id/dimeView"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="100dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Nickels"
+            android:id="@+id/nickelView"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="100dp" />
+
+    </FrameLayout>
+
+</FrameLayout>
